@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "scripts": {
+    "migrationUp": "cross-env APP_CONTEXT=cli ts-node -r tsconfig-paths/register ./src/scripts/mikro/migrationUp.ts",
+    "migrationDown": "cross-env APP_CONTEXT=cli ts-node -r tsconfig-paths/register ./src/scripts/mikro/migrationDown.ts",
+    "migrationCreate": "cross-env APP_CONTEXT=cli ts-node -r tsconfig-paths/register ./src/scripts/mikro/migrationCreate.ts",
+    "seederRun": "cross-env APP_CONTEXT=cli ts-node -r tsconfig-paths/register ./src/scripts/mikro/seederRun.ts"
+  }
+}

@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  fluentpal_postgres:
+    container_name: fluentpal_postgres
+    image: postgres:14
+    restart: always
+    volumes:
+      - fluentpal_postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: $DB_NAME
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+    ports:
+      - '${DB_HOST_PORT}:5432'
+    networks:
+      - fluentpal_network
+
+  fluentpal_minio:
+    container_name: fluentpal_minio
+    image: quay.io/minio/minio
+    restart: always
+    volumes:
+      - fluentpal_minio_data:/data
+    ports:
+      - '${MINIO_API_PORT}:${MINIO_API_PORT}'
+      - '${MINIO_CONSOLE_PORT}:${MINIO_CONSOLE_PORT}'
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+    command: 'server /data --address ":${MINIO_API_PORT}" --console-address ":${MINIO_CONSOLE_PORT}"'
+    networks:
+      - fluentpal_network
+
+networks:
+  fluentpal_network:
+
+volumes:
+  fluentpal_postgres_data:
+  fluentpal_minio_data:

@@ -9,6 +9,8 @@
     "react": "*",
     "react-native": "*",
     "react-native-svg": "*",
-    "metro-config": "*"
+    "metro-config": "*",
+    "react-native-svg-transformer": "*",
+    "react-native-elements": "*"
   }
 }

@@ -34,4 +34,9 @@ export class AuthController {
     console.log('req', req.user);
     return req.user;
   }
+
+  @Get('me')
+  async me(@Req() req) {
+    return this.authService.getLoggerUser(req.user.id);
+  }
 }

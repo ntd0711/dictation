@@ -11,6 +11,14 @@
     "react-native-svg": "*",
     "metro-config": "*",
     "react-native-svg-transformer": "*",
-    "react-native-elements": "*"
+    "react-native-elements": "*",
+    "@react-navigation/native-stack": "*",
+    "@react-navigation/native": "*",
+    "react-native-screens": "*",
+    "react-native-safe-area-context": "*",
+    "@react-navigation/bottom-tabs": "*",
+    "axios": "*",
+    "@tanstack/react-query": "*",
+    "zustand": "*"
   }
 }

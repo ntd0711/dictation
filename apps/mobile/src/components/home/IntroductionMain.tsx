@@ -15,12 +15,12 @@ const IntroductionMain = () => {
       </Typography>
       <View style={styles.stepsContainer}>
         <View style={styles.stepBlock}>
-          <Image
+          {/* <Image
             source={{
               uri: 'https://res.cloudinary.com/dr22k5qml/image/upload/v1651286044/dailydictation/tl9vx19jevxg7lv5fi1n.png',
             }}
             style={styles.stepImage}
-          />
+          /> */}
           <Typography style={styles.stepTitle}>
             1. Listen to the audio
           </Typography>
@@ -30,12 +30,12 @@ const IntroductionMain = () => {
           </Typography>
         </View>
         <View style={styles.stepBlock}>
-          <Image
+          {/* <Image
             source={{
               uri: 'https://res.cloudinary.com/dr22k5qml/image/upload/v1651286044/dailydictation/a446xbtpfmvkmrgqkfzt.png',
             }}
             style={styles.stepImage}
-          />
+          /> */}
           <Typography style={styles.stepTitle}>
             2. Type what you hear
           </Typography>
@@ -45,14 +45,12 @@ const IntroductionMain = () => {
           </Typography>
         </View>
         <View style={styles.stepBlock}>
-          {
-            <Image
-              source={{
-                uri: 'https://res.cloudinary.com/dr22k5qml/image/upload/v1651286044/dailydictation/a446xbtpfmvkmrgqkfzt.png',
-              }}
-              style={styles.stepImage}
-            />
-          }
+          {/* <Image
+            source={{
+              uri: 'https://res.cloudinary.com/dr22k5qml/image/upload/v1651286044/dailydictation/a446xbtpfmvkmrgqkfzt.png',
+            }}
+            style={styles.stepImage}
+          /> */}
           <Typography style={styles.stepTitle}>3. Check & correct</Typography>
           <Typography style={styles.stepDescription}>
             Error correction is important for your listening accuracy and

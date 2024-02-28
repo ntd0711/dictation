@@ -7,7 +7,7 @@ const IntroductionTop = () => {
   const handlePress = () => {};
   return (
     <View style={styles.container}>
-      <Text style={styles.hello}>👋 Howdy, Diego</Text>
+      <Text style={styles.hello}>👋 Howdy, Diego11</Text>
       <View style={styles.childContainer}>
         <Text style={styles.introduction}>
           Dictation is a method to learn languages by listening and writing down

@@ -1,15 +1,22 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import { COLORS, FONT, SHADOWS, SIZES } from '@mobile/constants';
+import React, { FC } from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import Typography from '../Typography';
-import { FONT, SIZES, SHADOWS, COLORS } from '@mobile/constants';
+import { HttpClient } from '@mobile/api/httpclient';
 
-const LessonCard = () => {
-  const handlePress = () => {};
+type Props = {
+  name: string;
+  type: number;
+  onPress: () => void;
+};
+
+const LessonCard: FC<Props> = (props) => {
+  const handlePress = async () => {};
   return (
     <View style={styles.container}>
       <Typography>⭐</Typography>
       <View style={styles.rightContainer}>
-        <Typography style={styles.title}>1. First snowball</Typography>
+        <Typography style={styles.title}>{props.name}</Typography>
         <TouchableOpacity onPress={handlePress}>
           <Typography>Listen & type</Typography>
         </TouchableOpacity>

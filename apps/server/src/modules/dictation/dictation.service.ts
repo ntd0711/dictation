@@ -26,9 +26,12 @@ export class DictationService {
   ) {}
 
   async shortStoryLessons() {
-    return await this.dictationRepository.find({
-      type: DictationLessonType.Short_Story,
-    });
+    return await this.dictationRepository.find(
+      {
+        type: DictationLessonType.Short_Story,
+      },
+      { fields: ['name', 'type'] }
+    );
   }
 
   async dailyConversationLessons() {
@@ -155,9 +158,16 @@ export class DictationService {
         },
         {
           populate: ['comments', 'audio', 'comments', 'comments.user'],
-          // fields: ['audio.id'],
+          fields: [
+            'audio.path',
+            'audio.name',
+            'audio.key',
+            'comments',
+            'dictation_lesson',
+          ],
         }
       );
+
       return sentence;
     } catch (error) {
       console.log('error', error);

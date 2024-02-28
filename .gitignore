@@ -111,3 +111,4 @@ yarn-error.log
 
 
 apps/mobile-e2e/artifacts
+.env

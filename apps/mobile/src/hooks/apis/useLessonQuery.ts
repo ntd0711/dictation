@@ -1,5 +1,5 @@
 import { HttpClient } from '@mobile/api/httpclient';
-import { useQuery } from '@tanstack/react-query';
+import { QueryFunction, useQuery } from '@tanstack/react-query';
 import { QueryKeys } from '@mobile/hooks/apis/queryKeys';
 
 const fetchShortStoryLessons = async () => {

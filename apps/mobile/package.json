@@ -19,6 +19,11 @@
     "@react-navigation/bottom-tabs": "*",
     "axios": "*",
     "@tanstack/react-query": "*",
-    "zustand": "*"
+    "zustand": "*",
+    "@react-native-async-storage/async-storage": "*",
+    "react-native-keychain": "*",
+    "react-native-track-player": "*",
+    "react-native-vector-icons": "*",
+    "@react-native-community/slider": "*"
   }
 }

@@ -3,7 +3,8 @@ import IntroductionMain from '@mobile/components/home/IntroductionMain';
 import IntroductionTop from '@mobile/components/home/IntroductionTop';
 import { useUserStore } from '@mobile/stores';
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { Divider } from 'react-native-elements';
 
 const Home = () => {
   const { user } = useUserStore((state) => state);
@@ -11,7 +12,7 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.homeContainer}>
       <IntroductionTop />
-      {/* <Divider width={1} orientation="vertical" /> */}
+      <Divider width={1} orientation="vertical" />
       <IntroductionMain />
     </SafeAreaView>
   );

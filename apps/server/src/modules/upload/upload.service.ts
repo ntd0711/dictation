@@ -72,11 +72,19 @@ export class UploadService {
     const client = this.getClient();
     const hash = getFileHash();
     const key = `${IdMinioFolder.AudioFile}/${hash}.mp3`;
+
+    const metaData = {
+      'Content-Type': 'audio/mpeg',
+    };
     const minioResponse = await client.putObject(
       process.env.MINIO_BUCKET,
       key,
-      file.buffer
+      file.buffer,
+      file.size,
+      metaData
     );
+
+    console.log('minioResponse', minioResponse);
 
     const filePath = `${process.env.MINIO_PROTOCOL}://${
       process.env.MINIO_ENDPOINT
@@ -97,13 +105,20 @@ export class UploadService {
 
   async minioDownload(name: string) {
     const client = this.getClient();
-    const chunks = [];
-    const stream = await client.getObject(process.env.MINIO_BUCKET, name);
-    console.log(stream);
-    for await (const chunk of stream) {
-      chunks.push(Buffer.from(chunk));
-    }
+    // const chunks = [];
+    // const stream = await client.getObject(process.env.MINIO_BUCKET, name);
+    // for await (const chunk of stream) {
+    //   chunks.push(Buffer.from(chunk));
+    // }
 
-    return Buffer.concat(chunks).toString();
+    const url = client.presignedUrl(
+      'GET',
+      process.env.MINIO_BUCKET,
+      name,
+      24 * 60 * 60
+    );
+
+    // return Buffer.concat(chunks).toString();
+    return url;
   }
 }
